@@ -1,0 +1,64 @@
+﻿@model StudentManagement.Entities.Student
+<html lang="en">
+<head>
+    <title>Table 06</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="~/css/bootstrap.min1.css" rel="stylesheet" />
+    <link href="~/css/style1.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-4">
+                    <h2>Do you want to delete @Model.StudentName</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-wrap">
+                        <table class="table">
+                            <thead class="thead-primary">
+                                <tr>
+                                    <th>@Html.DisplayNameFor(model => model.StudentName)</th>
+                                    <th>@Html.DisplayNameFor(model => model.Class.ClassName)</th>
+                                    <th>@Html.DisplayNameFor(model => model.Address)</th>
+                                    <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="alert" role="alert">
+                                    <td>
+                                        @Html.DisplayFor(model => model.StudentName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Class.ClassName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Address)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.PhoneNumber)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <form class="button" asp-action="DeleteStudent">
+                            <input type="hidden" asp-for="StudentID" />
+                            <input type="submit" value="Delete" class="btn btn-danger" /> |
+                            <a asp-action="GetAllStudent">Back to List</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

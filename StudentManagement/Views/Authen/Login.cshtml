@@ -1,0 +1,64 @@
+﻿
+@model StudentManagement.Models.Login
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-workinghny-form">
+        <!-- /form -->
+        <div class="workinghny-form-grid">
+            <div class="wrapper">
+                <div class="logo">
+                    <h1><a class="brand-logo" href="index.html"><span>Working</span> Sign In</a></h1>
+                    <!-- if logo is image enable this
+                        <a class="brand-logo" href="#index.html">
+                            <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+                        </a> -->
+                </div>
+                <div class="workinghny-block-grid">
+                    <div class="workinghny-left-img align-end">
+                        <img src="~/images/2.png" class="img-responsive" alt="img" />
+                    </div>
+                    <div class="form-right-inf">
+                        <div class="login-form-content">
+                            <h2>Where to?</h2>
+                            <form asp-action="Login" class="signin-form" method="post">
+                                <div class="one-frm">
+                                    <label>Email</label>
+                                    <input type="text" asp-for="Email" placeholder="" required="">
+                                </div>
+                                <div class="one-frm">
+                                    <label>Password</label>
+                                    <input type="password" asp-for="Password" placeholder="" required="">
+                                </div>
+                                <label class="check-remaind">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <p class="remember">Remember Me</p>
+                                </label>
+                                <button class="btn btn-style mt-3" value="Login">Login</button>
+                                <p class="already">Don't have an account? <a href="Register">Register</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //form -->
+        <!-- copyright-->
+        <div class="copyright text-center">
+            <div class="wrapper">
+                <p class="copy-footer-29">
+                    © 2020 Working Sign In. All rights reserved | Design by <a href="https://w3layouts.com">W3layouts</a>
+                </p>
+            </div>
+        </div>
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+
+</body>

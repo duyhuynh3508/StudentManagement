@@ -1,0 +1,59 @@
+﻿@model StudentManagement.Entities.Student
+
+<html lang="en">
+<head>
+    <title>Student</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="~/css/bootstrap.min1.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="~/css/style1.css" rel="stylesheet" />
+
+</head>
+<body>
+        <div class="container-add">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-4">
+                    <h2 class="heading-section">Update Student</h2>
+                    <h3>@Model.StudentName</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-wrap">
+                        <form asp-action="EditStudent" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="StudentID" />
+                            <div class="form-group">
+                                <label asp-for="StudentName" class="control-label"></label>
+                                <input asp-for="StudentName" class="form-control" />
+                                <span asp-validation-for="StudentName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Address" class="control-label"></label>
+                                <input asp-for="Address" class="form-control" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Class" class="control-label"></label>
+                                <select asp-for="ClassID" class="form-control"
+                                        asp-items="@(new SelectList(@ViewBag.ListClass,"ClassID", "ClassName"))">
+                                </select>
+                                <span asp-validation-for="ClassID" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PhoneNumber" class="control-label"></label>
+                                <input asp-for="PhoneNumber" class="form-control" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                            <div class="button-ae">
+                                <input type="submit" value="Save" class="btn btn-primary" asp-action="EditStudent" />
+                                <a asp-action="GetAllStudent">Back to List</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+        </div>
+</body>
+</html>
